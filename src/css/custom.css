@@ -262,9 +262,23 @@ section h2 {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 996px) {
+  .navbar {
+    backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 1) !important;
+    overflow: visible !important;
+  }
+}
+
 [data-theme='dark'] .navbar {
   background: rgba(20, 20, 20, 0.9);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 996px) {
+  [data-theme='dark'] .navbar {
+    background: rgba(20, 20, 20, 1) !important;
+  }
 }
 
 .navbar__title {
@@ -457,34 +471,224 @@ table tbody tr:hover {
 }
 
 /* ========================================
+   CHATBOT STYLING
+   ======================================== */
+
+.chat-floating-button {
+  width: 70px;
+  height: 70px;
+  font-size: 32px;
+  bottom: 25px;
+  right: 25px;
+}
+
+.chat-window-wrapper {
+  bottom: 110px;
+  right: 25px;
+  width: 400px;
+  max-width: calc(100vw - 50px);
+}
+
+.chat-window-container {
+  border-radius: 24px;
+}
+
+.chat-messages-container {
+  height: 350px;
+}
+
+@media (max-width: 576px) {
+  .chat-floating-button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .chat-window-wrapper {
+    bottom: 85px;
+    right: 15px;
+    left: 15px;
+    width: auto;
+    max-width: none;
+  }
+
+  .chat-window-container {
+    border-radius: 16px;
+  }
+
+  .chat-messages-container {
+    height: 45vh; /* Responsive height on mobile */
+  }
+}
+
+/* Fix for mobile sidebar visibility */
+.navbar-sidebar {
+  z-index: 10001 !important; /* Higher than ChatAgent and other fixed elements */
+}
+
+.navbar-sidebar__items {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ========================================
+   GLOBAL MOBILE FIXES
+   ======================================== */
+
+/* Prevent table overflow */
+.markdown table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure images don't exceed screen width */
+.markdown img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* Fix long text/URLs breaking layout */
+.markdown {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Adjust sidebar for mobile */
+@media (max-width: 996px) {
+  .theme-doc-sidebar-container {
+    border-right: none !important;
+  }
+}
+
+/* Adjust main container padding on small mobile */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .markdown h1 {
+    font-size: 1.8rem;
+  }
+  
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
+   HOMEPAGE STYLES
+   ======================================== */
+
+.homepage-section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.homepage-section-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .homepage-section-title {
+    font-size: 2rem;
+  }
+  
+  .homepage-section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .homepage-section-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
 @media (max-width: 996px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
   .hero__title {
     font-size: 2.5rem;
   }
   
   .hero__subtitle {
     font-size: 1.2rem;
+    padding: 0 1rem;
   }
   
   .row .col > div {
     padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero .button--lg {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .row .col {
+    margin-bottom: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .hero {
-    padding: 3rem 0;
+    padding: 2.5rem 0.5rem;
+    text-align: center;
   }
   
   .hero__title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
   }
   
   .hero__subtitle {
     font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero .button--lg {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .navbar__title {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar__title {
+    max-width: 120px;
   }
 }
 

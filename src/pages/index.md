@@ -29,8 +29,8 @@ import ThemedImage from '@theme/ThemedImage';
     <div className="container">
       <div className="row">
         <div className="col col--10 col--offset-1">
-          <h2 style={{textAlign: 'center', fontSize: '2.5rem', marginBottom: '1.5rem'}}>Your Journey into Embodied AI</h2>
-          <p style={{textAlign: 'center', fontSize: '1.2rem', lineHeight: '1.8'}}>
+          <h2 className="text--center homepage-section-title">Your Journey into Embodied AI</h2>
+          <p className="text--center homepage-section-subtitle">
             "Physical AI & Humanoid Robotics" is your essential companion for understanding and building the next generation of intelligent machines.
             This comprehensive textbook guides you through the intricate world where artificial intelligence meets the physical realm.
             From the foundational principles of robot control and perception to advanced topics in robot learning, human-robot interaction,

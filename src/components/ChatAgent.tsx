@@ -66,19 +66,15 @@ export default function ChatAgent3D({ bookName }: ChatAgentProps) {
         whileHover={{ scale: 1.15, rotate: 360 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setOpen(!open)}
+        className="chat-floating-button"
         style={{
           position: 'fixed',
-          bottom: '25px',
-          right: '25px',
-          width: '70px',
-          height: '70px',
           borderRadius: '50%',
           background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%)',
           backgroundSize: '200% 200%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '32px',
           cursor: 'pointer',
           boxShadow: '0 8px 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(168, 85, 247, 0.3)',
           zIndex: 9999,
@@ -100,20 +96,17 @@ export default function ChatAgent3D({ bookName }: ChatAgentProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+            className="chat-window-wrapper"
             style={{
               position: 'fixed',
-              bottom: '110px',
-              right: '25px',
               zIndex: 10000,
-              width: '400px',
-              maxWidth: 'calc(100vw - 50px)',
             }}
           >
             <div
+              className="chat-window-container"
               style={{
                 background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(40, 40, 40, 0.95) 100%)',
                 backdropFilter: 'blur(20px)',
-                borderRadius: '24px',
                 padding: '0',
                 boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.2)',
                 color: '#f1f1f1',
@@ -174,8 +167,8 @@ export default function ChatAgent3D({ bookName }: ChatAgentProps) {
 
               {/* Chat Box */}
               <div
+                className="chat-messages-container"
                 style={{
-                  height: '350px',
                   overflowY: 'auto',
                   padding: '20px',
                   background: 'linear-gradient(to bottom, #1a1a1a, #222)',
